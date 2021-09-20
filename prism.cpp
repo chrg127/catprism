@@ -1,7 +1,6 @@
 // g++ prism.cpp -lSDL2 -lGL -ldl
 // linux only
 
-#include <fmt/core.h>
 #include <SDL2/SDL.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -125,9 +124,9 @@ int main()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, channels == 4 ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, imgdata);
 
-    glm::mat4 model { 1.0f };
-    glm::mat4 view  { 1.0f };
-    glm::mat4 proj  { 1.0f };
+    glm::mat4 model{1.0f};
+    glm::mat4 view{1.0f};
+    glm::mat4 proj{1.0f};
     view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
     proj = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
     glUseProgram(id);
